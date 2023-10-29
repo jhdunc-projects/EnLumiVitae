@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float rayLength;
     [SerializeField] private float rayPositionOffset;
-    private bool canJump = true;
 
     public LayerMask terrainLayer;
     public Rigidbody rb;
@@ -28,10 +27,6 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
-    private void Jump()
-    {
-
-    }
     void Update()
     {
         // Touch Grass? (raycast ground check)

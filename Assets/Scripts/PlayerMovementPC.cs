@@ -27,13 +27,7 @@ public class PlayerMovementPC : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
-    
-    private void OnCollisionEnter(Collision any)
-    {
-        Debug.Log("Collision Occured");
-        Debug.Log(any.transform.name);
-    }
-    void Update()
+     void Update()
     {
         // Set variables to make look more tidy
         float x = Input.GetAxis("Horizontal");

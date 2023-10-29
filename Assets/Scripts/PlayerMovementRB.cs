@@ -8,12 +8,13 @@ public class PlayerMovementRB : MonoBehaviour
     public Rigidbody rb;
     public float jumpForce;
 
+
     private bool bloodForm = true;
     private bool boneForm = false;
     private bool voidForm = false;
 
     bool jump = false;
-
+    bool canJump = true;
     public SpriteRenderer sr;
 
     public Animator animator;
@@ -22,13 +23,19 @@ public class PlayerMovementRB : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
-    public void OnLanding()
+    void OnCollisionEnter(Collision collision)
     {
-        animator.SetBool("IsJumping", false);
+        if (collision.gameObject.tag == "Floor")
+        {
+            jump = false;
+            canJump = true;
+            animator.SetBool("IsJumping", false);
+        }
     }
-    void Update()
+        void Update()
     {
         // Set variables to make look more tidy
         float x = Input.GetAxis("Horizontal");
@@ -38,17 +45,23 @@ public class PlayerMovementRB : MonoBehaviour
         rb.velocity = new Vector3(x * moveSpeed, rb.velocity.y, z * moveSpeed);
         
         animator.SetFloat("Speed", Mathf.Abs(x));
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !jump)
         {
             jump = true;
             animator.SetBool("IsJumping", true);
+            
         }
 
         // Jump 
         if (Input.GetButtonDown("Jump"))
         {
+            if(jump && canJump)
+            { 
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            canJump = false;
+            }
         }
+
         // Flippin' the Sprite to match direction of movement
         if (x != 0 && x < 0)
         {
