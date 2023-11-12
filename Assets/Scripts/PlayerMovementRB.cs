@@ -10,11 +10,15 @@ public class PlayerMovementRB : MonoBehaviour
 
 
     bool voidForm;
+    private int colCount;
+
     bool jump = false;
     bool onGround = true;
     public SpriteRenderer sr;
 
     public Animator animator;
+
+    
 
 
     // Start is called before the first frame update
@@ -24,6 +28,7 @@ public class PlayerMovementRB : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         animator.SetBool("inLight", true);
         voidForm = false;
+        colCount = 0;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -47,6 +52,7 @@ public class PlayerMovementRB : MonoBehaviour
             animator.SetBool("inLight", true);
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
             voidForm = false;
+            colCount ++;
         }
     }
 
@@ -54,15 +60,23 @@ public class PlayerMovementRB : MonoBehaviour
     {
         if (other.gameObject.tag == "Light")
         {
-            animator.SetBool("inLight", false);
-            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .2f);
-            voidForm = true;
-
+            if(colCount == 1)
+            { 
+                animator.SetBool("inLight", false);
+                sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .2f);
+                voidForm = true;
+                colCount--;
+            }
+            else
+            {
+                colCount --;
+            }
 
         }
     }
     void Update()
     {
+        Debug.Log(colCount);
         // Set variables to make look more tidy
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
@@ -70,7 +84,16 @@ public class PlayerMovementRB : MonoBehaviour
         // Movement
         if (voidForm == false)
         {
-            rb.velocity = new Vector3(x * moveSpeed, rb.velocity.y, rb.velocity.y);
+            if (animator.GetBool("CanPush") == true)
+            {
+                rb.velocity = new Vector3(x * .3f * moveSpeed, rb.velocity.y, rb.velocity.y);
+                
+            }
+            else
+            {
+                rb.velocity = new Vector3(x * moveSpeed, rb.velocity.y, rb.velocity.y);
+                
+            }
         }
         else
         {
@@ -99,13 +122,19 @@ public class PlayerMovementRB : MonoBehaviour
         // Fly
 
         // Flippin' the Sprite to match direction of movement
-        if (x != 0 && x < 0)
+        if (animator.GetBool("CanPush") == false)
         {
-            sr.flipX = true;
+            if (x != 0 && x < 0)
+            {
+                sr.flipX = true;
+            }
+            else if (x != 0 && x > 0)
+            {
+
+                sr.flipX = false;
+
+            }
         }
-        else if (x != 0 && x > 0)
-        {
-            sr.flipX = false;
-        }
+        
     }
 }

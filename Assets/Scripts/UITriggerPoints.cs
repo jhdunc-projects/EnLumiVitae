@@ -8,18 +8,27 @@ public class UITriggerPoints : MonoBehaviour
     public GameObject firstDarkUI;
     public Collider firstDarkCollide;
 
+    public bool firstInteract = true;
+    public GameObject firstInteractUI;
+    public Collider firstInteractCollide;
+
     void Start()
     {
         firstDarkUI.SetActive(false);
+        firstInteractUI.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other == firstDarkCollide && firstDark == true)
         {
-            Debug.Log("gameobject working"); 
             firstDarkUI.SetActive(true);
         }
+        if (other == firstInteractCollide && firstInteract == true)
+        {
+            firstInteractUI.SetActive(true);
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -28,6 +37,11 @@ public class UITriggerPoints : MonoBehaviour
         {
             firstDarkUI.SetActive(false);
             firstDark = false;
+        }
+        if (other == firstInteractCollide)
+        {
+            firstInteractUI.SetActive(false);
+            firstInteract = false;
         }
     }
     void Update()
