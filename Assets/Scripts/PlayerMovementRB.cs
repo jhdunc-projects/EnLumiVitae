@@ -76,7 +76,7 @@ public class PlayerMovementRB : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(colCount);
+        
         // Set variables to make look more tidy
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");

@@ -32,6 +32,19 @@ public class PushPull : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         isTouching = true;
+        objX = transform.position.x;
+        distanceDiff = player.transform.position.x - objX;
+
+        if ((player.transform.position.x - objX) > 0)
+        {
+            objOffset = -.75f;
+        }
+        else
+        {
+            objOffset = .75f;
+        }
+
+
     }
 
     private void OnCollisionExit(Collision collision)
@@ -45,57 +58,39 @@ public class PushPull : MonoBehaviour
 
     void Update()
     {
-        objX = transform.position.x;
-        distanceDiff = player.transform.position.x - objX;
 
-        if ((player.transform.position.x - objX) > 0)
-        {
-            objOffset = -.75f;
-        }
-        else
-        {
-            objOffset = .75f;
-        }
-        
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (isTouching == true && canPush == false)
             {
-                /*rb.constraints = RigidbodyConstraints.None;*/
                 rb.isKinematic = false;
                 canPush = true;
                 animator.SetBool("CanPush", true);
-                
             }
             else
             {
-                /*rb.constraints = RigidbodyConstraints.FreezeAll;*/
                 rb.isKinematic = true;
                 canPush = false;
                 animator.SetBool("CanPush", false);
             }
             
-        }       
-        if(animator.GetBool("inLight") == false)
+        }
+        if (animator.GetBool("inLight") == false)
         {
             rb.isKinematic = true;
             canPush = false;
             animator.SetBool("CanPush", false);
         }
-
+        Debug.Log("canPush" + canPush);
         if (canPush == true)
         {
-            
-
-           if(player.transform.position.x - objX != distanceDiff)
+            Debug.Log("Call SetTransformX" + "step 1: canPush = true");
+            if (player.transform.position.x - objX != distanceDiff)
             {
+                Debug.Log("Call SetTransformX");
                 SetTransformX(objOffset);
             }
-
-            /*rb.constraints = RigidbodyConstraints.FreezePositionY;
-            rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            rb.constraints = RigidbodyConstraints.FreezeRotation;*/
         }
 
         if (objTransform.position != lastPosition)

@@ -27,6 +27,6 @@ public class GameStart : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(anim.GetBool("PlayerSpawn"));
+        
     }
 }

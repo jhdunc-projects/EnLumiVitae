@@ -12,10 +12,15 @@ public class UITriggerPoints : MonoBehaviour
     public GameObject firstInteractUI;
     public Collider firstInteractCollide;
 
+    public bool secretCorner = true;
+    public GameObject secretCornerUI;
+    public Collider secretCornerCollide;
+
     void Start()
     {
         firstDarkUI.SetActive(false);
         firstInteractUI.SetActive(false);
+        secretCornerUI.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +32,10 @@ public class UITriggerPoints : MonoBehaviour
         if (other == firstInteractCollide && firstInteract == true)
         {
             firstInteractUI.SetActive(true);
+        }
+        if (other == secretCornerCollide && secretCorner == true)
+        {
+            secretCornerUI.SetActive(true);
         }
 
     }
@@ -42,6 +51,10 @@ public class UITriggerPoints : MonoBehaviour
         {
             firstInteractUI.SetActive(false);
             firstInteract = false;
+        }
+        if (other == secretCornerCollide)
+        {
+            secretCornerUI.SetActive(false);
         }
     }
     void Update()
