@@ -24,18 +24,40 @@ public class PlayerMovementRB : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         transform.GetChild(0).gameObject.SetActive(false);
+        animator.SetBool("inLight", true);
     }
 
     void OnCollisionEnter(Collision collision)
     {
+
+
         if (collision.gameObject.tag == "Floor")
         {
             jump = false;
             canJump = true;
             animator.SetBool("IsJumping", false);
+            animator.SetBool("onGround", true);
+        }
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Light")
+        {
+            animator.SetBool("inLight", true);
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
         }
     }
-        void Update()
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Light")
+        {
+            animator.SetBool("inLight", false);
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .2f);
+        }
+    }
+    void Update()
     {
         // Set variables to make look more tidy
         float x = Input.GetAxis("Horizontal");
@@ -49,7 +71,8 @@ public class PlayerMovementRB : MonoBehaviour
         {
             jump = true;
             animator.SetBool("IsJumping", true);
-            
+            animator.SetBool("onGround", false);
+
         }
 
         // Jump 
