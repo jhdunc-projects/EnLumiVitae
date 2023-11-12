@@ -33,7 +33,7 @@ public class PlayerMovementPC : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Debug.Log(moveDirection.y);
+        
         moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, 0f, Input.GetAxis("Vertical") * moveSpeed);
         if (Input.GetButtonDown("Jump"))
         {
