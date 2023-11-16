@@ -19,6 +19,8 @@ public class PushPull : MonoBehaviour
     private float distanceDiff;
     private float objX;
 
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a3fe22194e807dc438ab60adc82b2882
+guid: a5b35dc8af8328047ba6c5e3e8554b31
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,127 +105,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Void_Idle_48x48_0
+      name: Void_Idle_48x49_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 48
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 774b9ecf03bffcb4d8e47c40d1131f6e
-      internalID: 1063021527
+      spriteID: bd54d7e61b1d12b478a7572db8056d88
+      internalID: 594927254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Void_Idle_48x48_1
+      name: Void_Idle_48x49_1
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 48
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7eb79d175a1bc14bb2c1c75d4da0128
-      internalID: 1620828703
+      spriteID: 419b35c4784ba734e8d4d0d8230286cb
+      internalID: 727098407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Void_Idle_48x48_2
+      name: Void_Idle_48x49_2
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 48
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7badd5622fe21e4c876a898e32d49bb
-      internalID: -1614868529
+      spriteID: 88ac9fa6d6a0443439ee8e0f8938d963
+      internalID: -1689111502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Void_Idle_48x48_3
+      name: Void_Idle_48x49_3
       rect:
         serializedVersion: 2
         x: 144
         y: 0
         width: 48
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d824ad294f322054ba30b0135fa6764c
-      internalID: -696725345
+      spriteID: 462691ab14c58e941b166271bd502c11
+      internalID: -162554821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Void_Idle_48x48_4
+      name: Void_Idle_48x49_4
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 48
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b0e4ee28bbb869439f3c40ff42950d2
-      internalID: 1045105339
+      spriteID: 776215dddbb05b4449a7f49fe6eca960
+      internalID: 862724428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Void_Idle_48x48_5
+      name: Void_Idle_48x49_5
       rect:
         serializedVersion: 2
         x: 240
         y: 0
         width: 48
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be1328e1a7369714781c2846cfb8d12c
-      internalID: 802759394
+      spriteID: c3d661a3626e2524c8dc79599edf2c99
+      internalID: 1787909183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Idle_48x49_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00aa137e3e6d43249b249f2554466d8f
+      internalID: -790621981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Idle_48x49_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7056354f2014747bc50fd5b37846b3
+      internalID: -1665442591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Idle_48x49_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe43a462f59886c458a8567efcac5c49
+      internalID: -1445682438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Idle_48x49_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a1bc2bfb5276d48b6790fd25707fe7
+      internalID: -2055726321
       vertices: []
       indices: 
       edges: []
@@ -233,7 +317,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 2bb2c5b8a7b2ef9459cf7a906c1ccb9d
     internalID: 0
     vertices: []
     indices: 
@@ -241,12 +325,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Void_Idle_48x48_0: 1063021527
-      Void_Idle_48x48_1: 1620828703
-      Void_Idle_48x48_2: -1614868529
-      Void_Idle_48x48_3: -696725345
-      Void_Idle_48x48_4: 1045105339
-      Void_Idle_48x48_5: 802759394
+      Void_Idle_48x49_0: 594927254
+      Void_Idle_48x49_1: 727098407
+      Void_Idle_48x49_2: -1689111502
+      Void_Idle_48x49_3: -162554821
+      Void_Idle_48x49_4: 862724428
+      Void_Idle_48x49_5: 1787909183
+      Void_Idle_48x49_6: -790621981
+      Void_Idle_48x49_7: -1665442591
+      Void_Idle_48x49_8: -1445682438
+      Void_Idle_48x49_9: -2055726321
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -9,8 +9,8 @@ public class PlayerMovementRB : MonoBehaviour
     public float jumpForce;
 
 
-    bool voidForm;
-    private int colCount;
+    public bool voidForm;
+    public int colCount;
 
     bool jump = false;
     bool onGround = true;
@@ -18,7 +18,10 @@ public class PlayerMovementRB : MonoBehaviour
 
     public Animator animator;
 
-    
+    public GameObject switchObject;
+    private bool voidSBCurrent;
+    private bool voidSBLast;
+    public bool updateVoid;
 
 
     // Start is called before the first frame update
@@ -54,6 +57,10 @@ public class PlayerMovementRB : MonoBehaviour
             voidForm = false;
             colCount ++;
         }
+        if (other.gameObject.tag == "Switch")
+        {
+            switchObject = other.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -73,10 +80,53 @@ public class PlayerMovementRB : MonoBehaviour
             }
 
         }
+        if (other.gameObject.tag == "Switch")
+        {
+            switchObject = null;
+        }
+
     }
+    public void OnCollisionDestroy()
+    {
+
+            if (colCount == 1)
+            {
+                animator.SetBool("inLight", false);
+                sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .2f);
+                voidForm = true;
+                colCount--;
+            }
+            else
+            {
+                colCount--;
+            }
+
+
+    }
+    public void OnCollisionCreate()
+    {
+            animator.SetBool("inLight", true);
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
+            voidForm = false;
+            colCount++;
+}
     void Update()
     {
         
+        if(updateVoid == true)
+        {
+            if (voidForm == true)
+            {
+                OnCollisionCreate(); 
+                updateVoid = false;
+            }
+
+            else
+            {
+                OnCollisionDestroy();
+                updateVoid = false;
+            }
+        }
         // Set variables to make look more tidy
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
@@ -119,7 +169,6 @@ public class PlayerMovementRB : MonoBehaviour
             }
         }
 
-        // Fly
 
         // Flippin' the Sprite to match direction of movement
         if (animator.GetBool("CanPush") == false)
@@ -135,6 +184,17 @@ public class PlayerMovementRB : MonoBehaviour
 
             }
         }
+        voidSBCurrent = switchObject.GetComponent<SwitchBehavior>().voidState;
+
+    }
+    private void LateUpdate()
+    {
+
+        if (voidSBLast != voidSBCurrent)
+        {
+            updateVoid = true;
+        }
         
+        voidSBLast = voidSBCurrent;
     }
 }

@@ -23,6 +23,7 @@ public class GameStart : MonoBehaviour
         anim.SetBool("PlayerSpawn", false); 
         movement.moveSpeed = 3;
         movement.sr.enabled = true;
+        SfxManagerScript.sfxInstance.audioSource.PlayOneShot(SfxManagerScript.sfxInstance.nevSpawn);
 
     }
     void Update()

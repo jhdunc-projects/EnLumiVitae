@@ -8,6 +8,10 @@ public class UITriggerPoints : MonoBehaviour
     public GameObject firstDarkUI;
     public Collider firstDarkCollide;
 
+    public bool firstJump = true;
+    public GameObject firstJumpUI;
+    public Collider firstJumpCollide;
+
     public bool firstInteract = true;
     public GameObject firstInteractUI;
     public Collider firstInteractCollide;
@@ -15,12 +19,20 @@ public class UITriggerPoints : MonoBehaviour
     public bool secretCorner = true;
     public GameObject secretCornerUI;
     public Collider secretCornerCollide;
+    public GameObject secretSparkle;
+
+    public bool firstKnowledge = true;
+    public GameObject firstKnowledgeUI;
+    public Collider firstKnowledgeCollide;
+
 
     void Start()
     {
         firstDarkUI.SetActive(false);
         firstInteractUI.SetActive(false);
         secretCornerUI.SetActive(false);
+        firstJumpUI.SetActive(false);
+        firstKnowledgeUI.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,14 +40,26 @@ public class UITriggerPoints : MonoBehaviour
         if (other == firstDarkCollide && firstDark == true)
         {
             firstDarkUI.SetActive(true);
+            
         }
         if (other == firstInteractCollide && firstInteract == true)
         {
             firstInteractUI.SetActive(true);
+            SfxManagerScript.sfxInstance.audioSource.PlayOneShot(SfxManagerScript.sfxInstance.nevDisarray);
         }
         if (other == secretCornerCollide && secretCorner == true)
         {
             secretCornerUI.SetActive(true);
+            }
+        if (other == firstJumpCollide && firstJump == true)
+        {
+            firstJumpUI.SetActive(true);
+            SfxManagerScript.sfxInstance.audioSource.PlayOneShot(SfxManagerScript.sfxInstance.nevVoid);
+        }
+        if (other == firstKnowledgeCollide && firstKnowledge == true)
+        {
+            firstKnowledgeUI.SetActive(true);
+            SfxManagerScript.sfxInstance.audioSource.PlayOneShot(SfxManagerScript.sfxInstance.nevPortrait);
         }
 
     }
@@ -55,6 +79,18 @@ public class UITriggerPoints : MonoBehaviour
         if (other == secretCornerCollide)
         {
             secretCornerUI.SetActive(false);
+            secretSparkle.SetActive(false);
+            secretCorner = false;
+        }
+        if (other == firstJumpCollide)
+        {
+            firstJumpUI.SetActive(false);
+            firstJump = false;
+        }
+        if(other == firstKnowledgeCollide)
+        {
+            firstKnowledge = false;
+            firstKnowledgeUI.SetActive(false);
         }
     }
     void Update()

@@ -8,6 +8,7 @@ TagManager:
   - MovableObject
   - Light
   - Dim
+  - Switch
   layers:
   - Default
   - TransparentFX

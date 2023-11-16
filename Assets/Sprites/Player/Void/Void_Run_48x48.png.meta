@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67f4be1fd4e6fe340bdd5acf40312e4a
+guid: 663c6318c9317b44eb5ba74763684c2c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Void_Move_48x48_0
+      name: Void_Run_48x48_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f95c878105db944aba247f2e5945357
-      internalID: 1761128540
+      spriteID: cfc58960f13564947bf8e26bcc67a5ee
+      internalID: -692505780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Void_Move_48x48_1
+      name: Void_Run_48x48_1
       rect:
         serializedVersion: 2
         x: 48
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbc7639ef6468f345afa3debad846121
-      internalID: 735911365
+      spriteID: bf1c542ca1c914840bb6168f005c38a1
+      internalID: -596804323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Void_Move_48x48_2
+      name: Void_Run_48x48_2
       rect:
         serializedVersion: 2
         x: 96
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be1526fd4089daf4a9d1cccd862ed049
-      internalID: 1690413593
+      spriteID: a4e8b55a721af7d4ebe2bb442d5ff0a4
+      internalID: -272629439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Void_Move_48x48_3
+      name: Void_Run_48x48_3
       rect:
         serializedVersion: 2
         x: 144
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10f9b91142e12fa42a4c39a8491a8763
-      internalID: 1232262751
+      spriteID: 00b4fa293ae06fc4cab1d15577f0d518
+      internalID: 1565802648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Void_Move_48x48_4
+      name: Void_Run_48x48_4
       rect:
         serializedVersion: 2
         x: 192
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68190bdda832dd2479c895b6f5768daf
-      internalID: 2107172696
+      spriteID: 436dc614babc67746b5d89581df558ae
+      internalID: -942974176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Void_Move_48x48_5
+      name: Void_Run_48x48_5
       rect:
         serializedVersion: 2
         x: 240
@@ -224,8 +224,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba398914c590dc84c9afbeb0ed17fe40
-      internalID: 40698385
+      spriteID: 2dc931a53c9073345b9e02cfb61c6ccd
+      internalID: -1408087413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Run_48x48_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d602ebc125aaaa84d8fa5c5753699ae5
+      internalID: -1319700641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Run_48x48_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418cbf10eea90564bb21e5af169d77b3
+      internalID: 418405988
       vertices: []
       indices: 
       edges: []
@@ -233,7 +275,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 015d2e3ca667aec4b8c411c62b2121bb
+    spriteID: 163692d7a1b37fe4a9a8fa96198264b3
     internalID: 0
     vertices: []
     indices: 
@@ -241,12 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Void_Move_48x48_0: 1761128540
-      Void_Move_48x48_1: 735911365
-      Void_Move_48x48_2: 1690413593
-      Void_Move_48x48_3: 1232262751
-      Void_Move_48x48_4: 2107172696
-      Void_Move_48x48_5: 40698385
+      Void_Run_48x48_0: -692505780
+      Void_Run_48x48_1: -596804323
+      Void_Run_48x48_2: -272629439
+      Void_Run_48x48_3: 1565802648
+      Void_Run_48x48_4: -942974176
+      Void_Run_48x48_5: -1408087413
+      Void_Run_48x48_6: -1319700641
+      Void_Run_48x48_7: 418405988
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
