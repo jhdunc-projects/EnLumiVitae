@@ -55,7 +55,9 @@ public class PlayerMovementRB : MonoBehaviour
             animator.SetBool("inLight", true);
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
             voidForm = false;
-            colCount ++;
+            colCount++;
+            if (switchObject != null)
+            { switchObject.GetComponent<SwitchBehavior>().voidState = false; }
         }
         if (other.gameObject.tag == "Switch")
         {
@@ -73,6 +75,7 @@ public class PlayerMovementRB : MonoBehaviour
                 sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .2f);
                 voidForm = true;
                 colCount--;
+                { switchObject.GetComponent<SwitchBehavior>().voidState = true; }
             }
             else
             {
@@ -88,19 +91,10 @@ public class PlayerMovementRB : MonoBehaviour
     }
     public void OnCollisionDestroy()
     {
-
-            if (colCount == 1)
-            {
                 animator.SetBool("inLight", false);
                 sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .2f);
                 voidForm = true;
                 colCount--;
-            }
-            else
-            {
-                colCount--;
-            }
-
 
     }
     public void OnCollisionCreate()
