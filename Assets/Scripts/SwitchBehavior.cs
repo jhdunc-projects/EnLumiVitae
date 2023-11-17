@@ -38,10 +38,11 @@ public class SwitchBehavior : MonoBehaviour
         {
             nearSwitch = false;
             Debug.Log("Near Switch" + nearSwitch);
+
         }
     }
     void Update()
-    {
+    {   
         if(Input.GetKeyDown(KeyCode.E) && nearSwitch == true)
         {
             particleSparklies.SetActive(false);
@@ -52,19 +53,22 @@ public class SwitchBehavior : MonoBehaviour
                     {
                         switchState = false;
                         switchTarget.SetActive(false);
-                        if (changeState == true)
+                        if (changeState == true && player.GetComponent<PlayerMovementRB>().colCount == 1)
                         {
-                            voidState = true;
-
+                            player.GetComponent<PlayerMovementRB>().SetVoidFormOn();
+                        }
+                        if (changeState == false && player.GetComponent<PlayerMovementRB>().colCount > 1)
+                        {
+                            player.GetComponent<PlayerMovementRB>().colCount --;
                         }
                     }
                     else
                     {
                         switchState = true;
                         switchTarget.SetActive(true);
-                        if (changeState == true)
+                        if (changeState == true && player.GetComponent<PlayerMovementRB>().colCount == 0)
                         {
-                            voidState = false;
+                            player.GetComponent<PlayerMovementRB>().SetVoidFormOff();
                         }
                     }
                     break;

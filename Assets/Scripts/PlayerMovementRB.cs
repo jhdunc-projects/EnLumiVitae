@@ -19,8 +19,6 @@ public class PlayerMovementRB : MonoBehaviour
     public Animator animator;
 
     public GameObject switchObject;
-    private bool voidSBCurrent;
-    private bool voidSBLast;
     public bool updateVoid;
 
 
@@ -56,8 +54,6 @@ public class PlayerMovementRB : MonoBehaviour
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
             voidForm = false;
             colCount++;
-            if (switchObject != null)
-            { switchObject.GetComponent<SwitchBehavior>().voidState = false; }
         }
         if (other.gameObject.tag == "Switch")
         {
@@ -75,7 +71,6 @@ public class PlayerMovementRB : MonoBehaviour
                 sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .2f);
                 voidForm = true;
                 colCount--;
-                { switchObject.GetComponent<SwitchBehavior>().voidState = true; }
             }
             else
             {
@@ -89,38 +84,24 @@ public class PlayerMovementRB : MonoBehaviour
         }
 
     }
-    public void OnCollisionDestroy()
+    public void SetVoidFormOn()
     {
-                animator.SetBool("inLight", false);
-                sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .2f);
-                voidForm = true;
-                colCount--;
-
+        animator.SetBool("inLight", false);
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .2f);
+        voidForm = true;
+        colCount--;
     }
-    public void OnCollisionCreate()
+    public void SetVoidFormOff()
     {
-            animator.SetBool("inLight", true);
-            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
-            voidForm = false;
-            colCount++;
-}
+        animator.SetBool("inLight", true);
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
+        voidForm = false;
+        colCount++;
+    }
+
     void Update()
     {
         
-        if(updateVoid == true)
-        {
-            if (voidForm == true)
-            {
-                OnCollisionCreate(); 
-                updateVoid = false;
-            }
-
-            else
-            {
-                OnCollisionDestroy();
-                updateVoid = false;
-            }
-        }
         // Set variables to make look more tidy
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
@@ -178,17 +159,7 @@ public class PlayerMovementRB : MonoBehaviour
 
             }
         }
-        voidSBCurrent = switchObject.GetComponent<SwitchBehavior>().voidState;
 
     }
-    private void LateUpdate()
-    {
 
-        if (voidSBLast != voidSBCurrent)
-        {
-            updateVoid = true;
-        }
-        
-        voidSBLast = voidSBCurrent;
-    }
 }
