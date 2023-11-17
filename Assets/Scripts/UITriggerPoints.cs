@@ -25,6 +25,10 @@ public class UITriggerPoints : MonoBehaviour
     public GameObject firstKnowledgeUI;
     public Collider firstKnowledgeCollide;
 
+    public bool firstEnd = true;
+    public GameObject EndUI;
+    public Collider EndCollide;
+
 
     void Start()
     {
@@ -33,6 +37,7 @@ public class UITriggerPoints : MonoBehaviour
         secretCornerUI.SetActive(false);
         firstJumpUI.SetActive(false);
         firstKnowledgeUI.SetActive(false);
+        EndUI.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -59,6 +64,11 @@ public class UITriggerPoints : MonoBehaviour
         if (other == firstKnowledgeCollide && firstKnowledge == true)
         {
             firstKnowledgeUI.SetActive(true);
+            SfxManagerScript.sfxInstance.audioSource.PlayOneShot(SfxManagerScript.sfxInstance.nevPortrait);
+        }
+        if (other == EndCollide && firstEnd == true)
+        {
+            EndUI.SetActive(true);
             SfxManagerScript.sfxInstance.audioSource.PlayOneShot(SfxManagerScript.sfxInstance.nevPortrait);
         }
 
@@ -91,6 +101,11 @@ public class UITriggerPoints : MonoBehaviour
         {
             firstKnowledge = false;
             firstKnowledgeUI.SetActive(false);
+        }
+        if (other == firstEnd)
+        {
+            firstEnd = false;
+            EndUI.SetActive(false);
         }
     }
     void Update()

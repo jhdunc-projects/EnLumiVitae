@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JournalMenuBehavior : MonoBehaviour
 {
@@ -93,4 +94,12 @@ public class JournalMenuBehavior : MonoBehaviour
         }
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

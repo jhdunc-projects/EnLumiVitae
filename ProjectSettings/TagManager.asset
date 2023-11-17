@@ -9,6 +9,7 @@ TagManager:
   - Light
   - Dim
   - Switch
+  - music
   layers:
   - Default
   - TransparentFX
